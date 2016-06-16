@@ -5,6 +5,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+//required for identity and owin security
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Owin.Security;
+
 /**
  * @author: Chad Ostler
  * @date: June 2, 2016
@@ -18,7 +23,25 @@ namespace COMP2007_S2016_Week6
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            SetActivePage();
+            if (!IsPostBack)
+            {
+                //check if a user is logged in
+                if (HttpContext.Current.User.Identity.IsAuthenticated)
+                {
+                    //show logged in content
+                    ContosoPlaceHolder.Visible = true;
+                    PublicPlaceHolder.Visible = false;
+                }
+                else
+                {
+                    //show logged out content
+                    ContosoPlaceHolder.Visible = false;
+                    PublicPlaceHolder.Visible = true;
+                }
+
+                SetActivePage();
+            }
+            
         }
 
         /**
