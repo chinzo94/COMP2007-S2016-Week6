@@ -46,7 +46,7 @@ namespace COMP2007_S2016_Week6
         protected void CancelButton_Click(object sender, EventArgs e)
         {
             //redirect back to students page
-            Response.Redirect("~/Students.aspx");
+            Response.Redirect("~/Contoso/Students.aspx");
         }
 
         protected void SaveButton_Click(object sender, EventArgs e)
@@ -86,7 +86,7 @@ namespace COMP2007_S2016_Week6
                 db.SaveChanges();
 
                 //redirect back to updated students page
-                Response.Redirect("~/Students.aspx");
+                Response.Redirect("~/Contoso/Students.aspx");
             }
         }
     }
