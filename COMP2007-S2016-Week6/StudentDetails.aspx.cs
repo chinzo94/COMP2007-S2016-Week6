@@ -26,7 +26,7 @@ namespace COMP2007_S2016_Week6
             //populate the form with existing data from the database
             int StudentID = Convert.ToInt32(Request.QueryString["StudentID"]);
 
-            using (DefaultConnection db = new DefaultConnection())
+            using (ContosoConnection db = new ContosoConnection())
             {
                 //populate a student object instance with the StudentID from the URL Parameter
                 Student updatedStudent = (from student in db.Students
@@ -52,7 +52,7 @@ namespace COMP2007_S2016_Week6
         protected void SaveButton_Click(object sender, EventArgs e)
         {
             //connect to EF
-            using (DefaultConnection db = new DefaultConnection())
+            using (ContosoConnection db = new ContosoConnection())
             {
                 //use student model to create a new student object and save a new record
                 Student newStudent = new Student();

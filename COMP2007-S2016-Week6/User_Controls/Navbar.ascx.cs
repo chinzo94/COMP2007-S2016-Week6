@@ -44,8 +44,14 @@ namespace COMP2007_S2016_Week6
                 case "Departments":
                     departments.Attributes.Add("class", "active");
                     break;
-                case "Contact":
-                    contact.Attributes.Add("class", "active");
+                case "Contoso Menu":
+                    menu.Attributes.Add("class", "active");
+                    break;
+                case "Login":
+                    login.Attributes.Add("class", "active");
+                    break;
+                case "Register":
+                    register.Attributes.Add("class", "active");
                     break;
             }
         }

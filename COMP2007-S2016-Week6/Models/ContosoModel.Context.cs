@@ -13,9 +13,9 @@ namespace COMP2007_S2016_Week6.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
 
-    public partial class DefaultConnection : DbContext
+    public partial class ContosoConnection : DbContext
     {
-        public DefaultConnection()
+        public ContosoConnection()
             : base("name=DefaultConnection")
         {
         }
